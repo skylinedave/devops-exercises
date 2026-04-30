@@ -16,8 +16,8 @@ kind/cluster-config.yaml
 
 Vengono creati:
 
-* 1 nodo control-plane per gestione
-* 2 nodi worker operativi
+* un nodo control-plane per gestione
+* due nodi worker operativi
 * mappature personalizzate delle porte per esporre i servizi a livello locale
 
 Si procede alla creazione del cluster
