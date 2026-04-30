@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: gateway-config
+  namespace: {{ .Values.namespace.name }}
+data:
+  default.conf: |
+    server {
+      listen 80;
+
+      location / {
+        proxy_pass http://frontend.{{ .Values.namespace.name }}.svc.cluster.local;
+      }
+
+      location /api/ {
+        proxy_pass http://backend.{{ .Values.namespace.name }}.svc.cluster.local/;
+      }
+    }
