@@ -7,6 +7,9 @@ Le scelte principali sono state:
 - separare frontend, backend e gateway in deployment distinti;
 - usare NGINX come reverse proxy nel gateway;
 - esporre il gateway via NodePort per semplificare il test locale.
+- usare `hashicorp/http-echo` per il backend perché è leggero e sufficiente per validare routing e networking;
+- mantenere i manifest Kubernetes separati dal chart Helm per mostrare prima la versione base e poi quella parametrizzata;
+- usare NodePort perché l'esercizio gira localmente su Kind e non richiede un Ingress controller.
 
 # 1. Configurazione del cluster (kind)
 
