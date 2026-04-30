@@ -96,6 +96,8 @@ Per eventualmente scalare le risorse ora è necessario solo aggiornare i valori 
 - Ho utilizzato i servizi NodePort per semplificare il tutto e allinearmi alle mappature delle porte di Kubernetes.
 - Attualmente il gateway usa una configurazione NGINX minimale.
 - Non sono stati aggiunti readiness/liveness probe.
+- Non sono presenti nei file deployments specifiche di limits e requests poiché non ho avuto modo di testare in maniera approfondita.
+- La struttura dei file k8s segue una struttura che sono abituato ad utilizzare sulle infrastrutture a cui metto mano, per facilità di implementazione.
 - Il chart Helm potrebbe essere migliorato separando meglio i valori di frontend, backend e gateway.
 - Non è presente un Ingress controller; NodePort è stato scelto per semplicità locale.
 - Non è stata configurata alcuna persistenza, poiché non era richiesta per questo esercizio.
