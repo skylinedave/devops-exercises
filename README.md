@@ -8,7 +8,7 @@ L'applicazione è composta da:
 * un backend (HTTP)
 * un gateway (nginx che funge da proxy inverso)
 
-1. Configurazione del cluster (kind)
+# 1. Configurazione del cluster (kind)
 
 Il cluster è definito nel file:
 
@@ -22,7 +22,7 @@ Vengono creati:
 
 Si procede alla creazione del cluster
 
-2. Manifest di Kubernetes
+# 2. Manifest di Kubernetes
 
 I manifest grezzi si trovano in:
 
@@ -37,7 +37,7 @@ Includono:
 
 Questi file possono essere applicati al cluster e verificati
 
-3. Architettura dell'applicazione
+# 3. Architettura dell'applicazione
 
 L'applicazione è suddivisa in tre componenti:
 
@@ -58,7 +58,7 @@ Il frontend e il backend sono inoltre esposti individualmente tramite NodePorts 
 
 La comunicazione tra i componenti avviene all'interno del cluster utilizzando il service discovery di Kubernetes (`*.svc.cluster.local`).
 
-4. Accedere all'app
+# 4. Accedere all'app
 
 I servizi sono esposti tramite NodePort, che vengono mappati su localhost tramite la configurazione di Kind.
 
@@ -68,13 +68,13 @@ Ciò significa che puoi accedere a tutto direttamente dal tuo computer:
 * frontend → http://localhost:8081
 * backend → http://localhost:8082
 
-5. Helm chart
+# 5. Helm chart
 
 L'Helm chart si trova in helm/demo-app e rispecchia i manifesti Kubernetes grezzi.
 
 Invece di hardcodare i valori, elementi come le versioni delle immagini, il numero di repliche e le porte sono configurabili tramite values.yaml.
 
-6. Note
+# 6. Note
 
 Ho utilizzato i servizi NodePort per semplificare il tutto e allinearmi alle mappature delle porte di Kubernetes.
 
