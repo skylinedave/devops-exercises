@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: gateway-config
+  namespace: devops
+data:
+  default.conf: |
+    server {
+      listen 80;
+
+      # Frontend
+      location / {
+        proxy_pass http://frontend.devops.svc.cluster.local;
+      }
+
+      # Backend API
+      location /api/ {
+        proxy_pass http://backend.devops.svc.cluster.local/;
+      }
+    }
