@@ -19,6 +19,11 @@ nodes:
         hostPort: 8080
         protocol: TCP
 
+      # Gateway / ingress HTTPS
+      #- containerPort: 30443
+      #  hostPort: 8443
+      #  protocol: TCP
+
       # Frontend 
       - containerPort: 30081
         hostPort: 8081
