@@ -105,3 +105,7 @@ Per eventualmente scalare le risorse ora è necessario solo aggiornare i valori 
 - Non è presente un Ingress controller; NodePort è stato scelto per semplicità locale.
 - Non è stata configurata alcuna persistenza, poiché non era richiesta per questo esercizio.
 - Il gateway è configurato tramite una ConfigMap anziché integrare la configurazione nell'immagine, il che semplifica l'aggiornamento del routing senza dover ricompilare i container.
+
+# 7. Conclusione
+
+Questo esercizio va a replicare in maniera semplificata come creo una nuova infrastruttura su con kubernetes, con le dovute limitazioni di risorse e di tempo.
